@@ -14,5 +14,3 @@ test:
   <<: *default
   host: localhost
   database: yj_test
-
-production:
