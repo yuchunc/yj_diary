@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  username: yj_diary
+  password:
+  encoding: UTF-8
+  pool: 5
+
+development:
+  <<: *default
+  host: localhost
+  database: yj_dev
+
+test:
+  <<: *default
+  host: localhost
+  database: yj_test
+
+production:
