@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title 易經日記 — 用易經寫我的日記
+    = stylesheet_link_tag "homepage", media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  body
+    == yield
