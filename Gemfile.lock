@@ -162,6 +162,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   jquery-rails
+  minitest
   omniauth
   omniauth-facebook
   pg
