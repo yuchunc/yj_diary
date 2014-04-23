@@ -5,4 +5,7 @@ class HomepageController < ActionController::Base
 
   def index
   end
+
+  def sample
+  end
 end

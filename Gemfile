@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.0'
 
 gem 'devise'
+gem "omniauth"
+gem "omniauth-facebook"
 
 gem 'pg'
 # Use SCSS for stylesheets
@@ -28,14 +30,19 @@ gem 'jquery-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# gem 'semantic-ui-sass'
+gem 'semantic-ui-sass'
 
-gem 'bootstrap-sass', '~> 3.1.1'
+# gem 'bootstrap-sass', '~> 3.1.1'
 
 group :development do
   gem 'spring',        group: :development
   gem 'better_errors'
   gem "binding_of_caller"
+  gem "xray-rails"
+end
+
+group :development, :test do
+  gem "minitest-rails"
 end
 
 # Use ActiveModel has_secure_password
