@@ -37,11 +37,15 @@ gem 'semantic-ui-sass'
 # gem 'bootstrap-sass', '~> 3.1.1'
 
 group :development do
-  gem 'spring',        group: :development
+  gem 'spring'
   gem 'better_errors'
   gem "binding_of_caller"
   gem "xray-rails"
+  gem "pry-rails"
+  gem 'pry-doc'
 end
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

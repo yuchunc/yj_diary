@@ -1,7 +1,10 @@
 class AddFacebookInfoToMembers < ActiveRecord::Migration
   def change
-    add_column :members, :facebook_id, :integer
-    add_column :members, :facebook_username, :string
-    add_column :members, :facebook_email, :string
+    add_column :members, :provider, :string
+    add_column :members, :username, :string
+    add_column :members, :uid, :integer
+    add_column :members, :oauth_hash, :string
+    add_column :members, :oauth_access_token, :string
+    add_column :members, :oauth_expires_at, :datetime
   end
 end
