@@ -1,10 +1,15 @@
 doctype html
 html
   head
-    title 易經日記 — 用易經寫我的日記
+    title 易經日記
     = stylesheet_link_tag "homepage", media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
-  body#homepage
-    == yield
+  body id="#{controller_name}_#{action_name}"
+    .ui.page.grid
+      .header.one.column.row
+        .column
+          h1 易經日記
+      .content.row
+        == yield
