@@ -32,6 +32,8 @@ class DeviseCreateMembers < ActiveRecord::Migration
 
 
       t.timestamps
+
+      t.string :name
     end
 
     add_index :members, :email,                unique: true

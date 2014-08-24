@@ -4,6 +4,9 @@ div class="two column stackable ui grid"
       每日一卦:
 
   .center.aligned.column
-    .ui.compact.red.inverted.segment
-      |test
-
+    .ui.compact.segment
+      == link_to member_omniauth_authorize_path(:facebook) do
+        .ui.facebook.button
+          i.facebook.icon
+          |Facebook 登入
+      end
