@@ -5,8 +5,11 @@ div class="two column stackable ui grid"
 
   .center.aligned.column
     .ui.compact.segment
-      == link_to member_omniauth_authorize_path(:facebook) do
-        .ui.facebook.button
-          i.facebook.icon
-          |Facebook 登入
-      end
+        - if member_signed_in?
+          | ohei
+        - else
+          == link_to member_omniauth_authorize_path(:facebook) do
+            .ui.facebook.button
+              i.facebook.icon
+              |Facebook 登入
+          end
