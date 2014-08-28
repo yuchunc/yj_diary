@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :members, :controllers => {omniauth_callbacks: "members/omniauth_callbacks"}
+  devise_for :member, :controllers => {omniauth_callbacks: "member/omniauth_callbacks"}
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  devise_scope :user do
+  devise_scope :member do
     get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
   # You can have the root of your site routed with "root"
   root 'homepage#index'
+
+  resource :posts, path: "p", to: "member/posts"
 
   get 'sample', to: "homepage#sample"
   # Example of regular route:
