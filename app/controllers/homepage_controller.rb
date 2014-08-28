@@ -4,5 +4,8 @@ class HomepageController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
+    if member_signed_in?
+      redirect_to login_redirect_path
+    end
   end
 end

@@ -45,9 +45,8 @@ ActiveRecord::Schema.define(version: 20140828092227) do
     t.string   "title"
     t.text     "content"
     t.string   "state"
-    t.datetime "edited_at"
-    t.datetime "published_at"
     t.integer  "member_id"
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

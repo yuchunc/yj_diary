@@ -1,2 +1,2 @@
-class Member::PostsController < Member::BaseConroller
+class Member::PostsController < Member::BaseController
 end
