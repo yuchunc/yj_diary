@@ -8,12 +8,14 @@ html
 
   body id="#{controller_name}_#{action_name}"
     .ui.page.grid
-      .header.two.column.row
+      .header.two.equal.height.column.row
         .column
           h1 易經日記
-        .right.floated.column
+        .column
           - if member_signed_in?
-            == link_to "登出", sign_out_path
+            == link_to sign_out_path do
+              #header_sign_out.ui.right.floated.button
+                |登出
 
       - if !flash.empty?
           == render "partials/flash_message"
