@@ -8,9 +8,13 @@ html
 
   body id="#{controller_name}_#{action_name}"
     .ui.page.grid
-      .header.one.column.row
+      .header.two.column.row
         .column
           h1 易經日記
+        .right.floated.column
+          - if member_signed_in?
+            == link_to "登出", sign_out_path
+
       - if !flash.empty?
           == render "partials/flash_message"
       .content.row

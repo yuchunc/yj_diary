@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :member, :controllers => {omniauth_callbacks: "member/omniauth_callbacks"}
+  devise_for :members, :controllers => {omniauth_callbacks: "members/omniauth_callbacks"}
 
   devise_scope :member do
-    get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+    get 'sign_in', :to => 'devise/sessions#new'
+    get 'sign_out', :to => 'devise/sessions#destroy'
   end
 
   root 'homepage#index'
 
-  get "login_redirect", to: "member/base#login_redirect"
-  resources :posts, path: "p", to: "member/posts"
+  get "login_redirect", to: "members/base#login_redirect"
+  resources :posts, path: "p", to: "members/posts"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

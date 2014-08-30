@@ -1,4 +1,4 @@
-class Member::BaseController < ApplicationController
+class Members::BaseController < ApplicationController
   before_action :authenticate_member!
 
   def login_redirect
