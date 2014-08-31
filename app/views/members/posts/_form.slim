@@ -1,7 +1,7 @@
 == form_for post, html: { class: "ui small fluid form segment" } do |f|
   .inline.field
     == label_tag "日期"
-    == label_tag l post.updated_at.present? ? post.updated_at : Time.now.to_date, format: :long
+    == label_tag l post.created_at.present? ? post.created_at : Time.now.to_date, format: :long
   .field
     == f.text_area :content, placeholder: "在這邊紀錄你的心情。"
   == f.submit "送出", class: "ui blue submit button"

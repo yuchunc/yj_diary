@@ -33,7 +33,7 @@ html_guas.each do |html_gua|
     if strong[/九/]
       1
     elsif strong[/六/]
-      2
+      0
     end
   }.compact
 
@@ -90,7 +90,7 @@ guas_ordered.each do |gua|
   guas_hash.merge! gua
 end
 
-File.open("test.yml", "w") {|f| f.write(guas_hash.to_yaml)}
+File.open("crawler/yijing.yml", "w") {|f| f.write(guas_hash.to_yaml)}
 
 p guas_ordered.count
 

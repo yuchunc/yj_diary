@@ -1,5 +1,16 @@
 class Post < ActiveRecord::Base
   belongs_to :member
 
-  validates_presence_of :title
+  def self.pu_gua
+    gua = []
+    6.times do
+      yao = 0
+      3.times do
+        Random.new
+        yao = yao + rand(2..3)
+      end
+      gua << yao
+    end
+    gua
+  end
 end
