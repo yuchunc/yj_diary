@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :member
 
-  def self.pu_gua
+  def self.bu_gua
     gua = []
     6.times do
       yao = 0

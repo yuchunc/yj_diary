@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140830073251) do
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pu_result"
+    t.string   "bu_result"
   end
 
 end

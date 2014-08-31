@@ -1,32 +1,49 @@
 class Members::PostsController < Members::BaseController
-
-  def show
-    @post = Post.find(params[:id])
-  end
+  before_action :set_post, only: [:show, :edit, :update]
 
   def new
     if current_member.posts.empty?  or current_member.posts.last.created_at < Time.now.to_date
       @post = Post.new
     else
-      redirect_to edit_post_path
+      flash[:notice] = "今天卜過了喔，沈澱一下，明天在卜看看 = )"
+      redirect_to edit_post_path id: current_member.posts.last.id
     end
   end
 
   def create
     @post = Post.new post_params
     @post.member = current_member
-    @post.pu_result = Post.pu_gua.join ','
+    @post.bu_result = Post.bu_gua.join ','
 
-    unless @post.save!
+    if @post.save!
+      flash[:success] = "存檔成功！"
+    else
       flash[:alert] = "存檔失敗！"
     end
 
     redirect_to post_path(@post)
   end
 
+  def edit
+  end
+
+  def update
+    if @post.update! post_params
+      flash[:success] = "存檔成功！"
+    else
+      flash[:alert] = "存檔失敗！"
+    end
+
+    redirect_to post_path(@post)
+
+  end
+
   private
+    def set_post
+      @post = Post.find params[:id]
+    end
 
     def post_params
-      params.require(:post).permit(:content, :pu_result)
+      params.require(:post).permit(:content, :bu_result)
     end
 end
