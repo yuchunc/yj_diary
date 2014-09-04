@@ -9,8 +9,10 @@ module ApplicationHelper
   end
 
   def display_yao(yao)
-    klass = 'yang yao' if yao == 1
-    klass = 'ying yao' if yao == 0
+    klass = 'black' if yao == 1
+    klass = 'white' if yao == 0
+
+    "<div class='yao'><div class='black'></div><div class='#{klass}'></div><div class='black'></div></div>"
 
   end
 end

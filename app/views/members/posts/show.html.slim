@@ -12,6 +12,6 @@
       h3 得卦
       .ui.two.column.grid
         .column#gua
-          |test
-          div.yang.yao
+          - @post.gua.reverse_each do |yao|
+            == display_yao(yao)
 
