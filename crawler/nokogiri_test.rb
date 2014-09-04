@@ -29,7 +29,7 @@ html_guas.each do |html_gua|
 
   page_strongs = page.css("strong").map{|strong| strong.text }
 
-  yaos = page_strongs[0..5].map { |strong|
+  yaos = page_strongs.map { |strong|
     if strong[/九/]
       1
     elsif strong[/六/]
