@@ -1,9 +1,17 @@
 .two.column.row
+
   .column
     .ui.blue.segment
       h2
         == l @post.created_at.to_date, format: :long
       p
         == @post.content
-      p
-        == @post.bu_result
+
+  .column
+    .ui.piled.segment
+      h3 得卦
+      .ui.two.column.grid
+        .column#gua
+          |test
+          div.yang.yao
+

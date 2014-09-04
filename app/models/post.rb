@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  include AASM
+
   belongs_to :member
 
   def self.bu_gua
@@ -13,4 +15,17 @@ class Post < ActiveRecord::Base
     end
     gua
   end
+
+  def gua
+    self.bu_result.split(',').map{|x| x.to_i % 2}
+  end
+
+  def bian_gua
+    self.bu_result.split(',').map do |x|
+      x = x.to_i
+      x = x + 1 if x == 9 or x == 6
+      x % 2
+    end
+  end
+
 end

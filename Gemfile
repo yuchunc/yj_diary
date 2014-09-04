@@ -26,6 +26,7 @@ gem 'sass-rails', '~> 4.0.3'
 
 # Utilities
 gem "settingslogic"
+gem 'aasm'
 
 group :development do
   gem 'spring'
