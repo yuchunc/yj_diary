@@ -9,9 +9,13 @@
 
   .column
     .ui.piled.segment
-      h3 得卦
-      .ui.two.column.grid
+      h3 == "得卦"
+
+
+      .ui.three.column.grid
         .column#gua
           - @post.gua.reverse_each do |yao|
             == display_yao(yao)
+        .two.wide.column
+
 
