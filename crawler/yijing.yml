@@ -1,5 +1,5 @@
 ---
-'1,1,1,1,1,1,1':
+'1,1,1,1,1,1':
   gua_order: 1
   gua_name: "乾"
   gua_ci: "乾卦"
@@ -7,20 +7,20 @@
   da_xiang: "《象》曰：天行健，君子以自強不息。潛龍勿用，陽在下也。見龍在田，德施普也。終日乾乾，反復道也。或躍在淵，進无咎也，飛龍在天，大人造也。亢龍有悔，盈不可久也。用九，天德不可為首也。"
   yaos:
   - yao_ci: "乾，元亨利貞。"
-    xiao_xiang: 
+    xiao_xiang:
   - yao_ci: "初九，潛龍勿用。"
-    xiao_xiang: 
+    xiao_xiang:
   - yao_ci: "九二，見龍在田，利見大人。"
-    xiao_xiang: 
+    xiao_xiang:
   - yao_ci: "九三，君子終日乾乾，夕惕若，厲，无咎。"
-    xiao_xiang: 
+    xiao_xiang:
   - yao_ci: "九四，或躍在淵，无咎。"
-    xiao_xiang: 
+    xiao_xiang:
   - yao_ci: "九五，飛龍在天，利見大人。"
-    xiao_xiang: 
+    xiao_xiang:
   - yao_ci: "上九，亢龍有悔。"
-    xiao_xiang: 
-'0,0,0,0,0,0,0':
+    xiao_xiang:
+'0,0,0,0,0,0':
   gua_order: 2
   gua_name: "坤"
   gua_ci: 2. 　 坤卦 　

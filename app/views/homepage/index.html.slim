@@ -1,12 +1,13 @@
-div class="two column stackable row"
-  .column
-    |
-      每日一卦:
+.row
+  .two.column.doubling.ui.grid
+    .column
+      |
+        每日一卦:
 
-  .center.aligned.column
-    .ui.compact.segment
-      == link_to member_omniauth_authorize_path(:facebook) do
-        .ui.facebook.button
-          i.facebook.icon
-          |Facebook 登入
-      end
+    .center.aligned.column
+      .ui.compact.segment
+        == link_to member_omniauth_authorize_path(:facebook) do
+          .ui.facebook.button
+            i.facebook.icon
+            |Facebook 登入
+        end

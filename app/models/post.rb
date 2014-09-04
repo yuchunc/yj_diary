@@ -28,4 +28,9 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def yijing
+    yijing = YAML.load_file("crawler/yijing.yml")
+    yijing[self.gua.join ',']
+  end
+
 end

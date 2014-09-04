@@ -1,21 +1,21 @@
-.two.column.row
+.row
+  .two.column.doubling.ui.grid
+    .column
+      .ui.blue.segment
+        h2
+          == l @post.created_at.to_date, format: :long
+        p
+          == @post.content
 
-  .column
-    .ui.blue.segment
-      h2
-        == l @post.created_at.to_date, format: :long
-      p
-        == @post.content
+    .column
+      .ui.piled.segment
+        h3 == "得卦 ─ #{@yijing_result['gua_name']}"
+        p == "卦詞： #{@yijing_result['gua_ci']}"
+        p == "彖曰： #{@yijing_result['tuan']}"
+        p == "象曰： #{@yijing_result['da_xiang']}"
 
-  .column
-    .ui.piled.segment
-      h3 == "得卦"
-
-
-      .ui.three.column.grid
-        .column#gua
-          - @post.gua.reverse_each do |yao|
-            == display_yao(yao)
-        .two.wide.column
-
-
+        .ui.three.column.grid
+          .column#gua
+            - @post.gua.reverse_each do |yao|
+              == display_yao(yao)
+          .two.wide.column

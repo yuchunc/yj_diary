@@ -24,6 +24,10 @@ class Members::PostsController < Members::BaseController
     redirect_to post_path(@post)
   end
 
+  def show
+    @yijing_result = @post.yijing
+  end
+
   def edit
   end
 
