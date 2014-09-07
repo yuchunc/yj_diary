@@ -3,6 +3,15 @@ class Post < ActiveRecord::Base
 
   belongs_to :member
 
+  aasm column: 'state' do
+    state :published, :initial => true
+    state :deleted
+
+    event :remove do
+      transitions :from => :published, :to => :deleted
+    end
+  end
+
   def self.bu_gua
     gua = []
     6.times do
