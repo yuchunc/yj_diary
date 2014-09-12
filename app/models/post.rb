@@ -51,6 +51,7 @@ class Post < ActiveRecord::Base
       yao_text =  ( index == 0 or index == 5 ) ? "#{Post::GUA_ORDER[index]}#{yao_name}" : "#{yao_name}#{Post::GUA_ORDER[index]}"
       yaos << yao_text
     end
+    yaos
   end
 
 end
