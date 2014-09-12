@@ -16,10 +16,9 @@
 
         .ui.three.column.grid
           .column
-            - @post.gua.reverse_each do |yao|
-              .right.floated.text
-                .yao_row.text.center
-                  == yao
+            - @post.yaos.reverse_each do |yao|
+              .yao_row.text.center
+                == yao
           .column#gua
             - @post.gua.reverse_each do |yao|
               == display_yao(yao)

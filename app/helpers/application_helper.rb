@@ -14,4 +14,5 @@ module ApplicationHelper
 
     "<div class='yao_row'><div class='black'></div><div class='#{klass}'></div><div class='black'></div></div>"
   end
+
 end

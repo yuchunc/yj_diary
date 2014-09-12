@@ -44,4 +44,13 @@ class Post < ActiveRecord::Base
     yijing[self.gua.join ',']
   end
 
+  def yaos
+    yaos = []
+    self.gua.each_with_index do |yao, index|
+      yao_name = yao > 0 ? "九" : "六"
+      yao_text =  ( index == 0 or index == 5 ) ? "#{Post::GUA_ORDER[index]}#{yao_name}" : "#{yao_name}#{Post::GUA_ORDER[index]}"
+      yaos << yao_text
+    end
+  end
+
 end
