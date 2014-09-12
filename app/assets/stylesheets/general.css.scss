@@ -16,7 +16,7 @@
   margin-bottom: 0;
 }
 
-.yao {
+.yao_row {
   height: 1em;
   width: 100%;
   display: block;
@@ -35,4 +35,8 @@
     height: inherit;
     width: 1/3 * 100%;
   }
+}
+
+.text.center {
+  text-align: center;
 }

@@ -12,6 +12,6 @@ module ApplicationHelper
     klass = 'black' if yao == 1
     klass = 'white' if yao == 0
 
-    "<div class='yao'><div class='black'></div><div class='#{klass}'></div><div class='black'></div></div>"
+    "<div class='yao_row'><div class='black'></div><div class='#{klass}'></div><div class='black'></div></div>"
   end
 end

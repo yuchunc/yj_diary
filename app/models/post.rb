@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
 
   belongs_to :member
 
+  GUA_ORDER = ['初', '二', "三", "四", '五', '上']
+
   aasm column: 'state' do
     state :published, :initial => true
     state :deleted
