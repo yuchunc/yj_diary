@@ -4,11 +4,13 @@
   .column
     h1
       == l @post.created_at.to_date, format: :long
+      | -
+      == @yijing_result['gua_name']
     .ui.blue.segment
       h3 公開內容
       p
         == @post.public_content
-      - if @post.private_content.present?
+      - if @post.private_content.present? and @post.member == current_member
         hr
         h3 私人內容
         p

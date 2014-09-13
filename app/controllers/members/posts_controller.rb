@@ -48,6 +48,6 @@ class Members::PostsController < Members::BaseController
     end
 
     def post_params
-      params.require(:post).permit(:content, :bu_result)
+      params.require(:post).permit(:public_content, :private_content, :bu_result)
     end
 end
