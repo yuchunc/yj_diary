@@ -31,8 +31,7 @@
                 .yao_row.text.center
                   == yao
             .column#gua
-              - @post.gua.reverse_each do |yao|
-                == display_yao(yao)
+              = render "partials/gua", gua: @post.gua
         .column
           - @yijing_result['yaos'].reverse_each do |yao_info|
             p

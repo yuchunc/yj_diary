@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w(homepage.css)
+Rails.application.config.assets.precompile += %w(general.css)
