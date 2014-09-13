@@ -4,7 +4,6 @@
   .column
     h1
       == l @post.created_at.to_date, format: :long
-      | -
       == @yijing_result['gua_name']
     .ui.blue.segment
       h3 公開內容
@@ -40,4 +39,3 @@
               == yao_info['yao_ci']
               br
               == yao_info['xiao_xiang']
-

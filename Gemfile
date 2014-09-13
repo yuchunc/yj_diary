@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.5'
 
 # Database
 gem 'pg'
@@ -15,6 +15,7 @@ gem "omniauth-facebook"
 # HTML Tool
 gem 'slim'
 gem 'slim-rails'
+gem 'kaminari'
 
 # Javascript
 gem 'uglifier', '>= 1.3.0'
@@ -24,7 +25,7 @@ gem 'jquery-rails'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'sass-rails', '~> 4.0.3'
 
-# Utilities
+# Backend Utilities
 gem "settingslogic"
 gem 'aasm'
 

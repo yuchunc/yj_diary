@@ -1,6 +1,10 @@
 class Members::PostsController < Members::BaseController
   before_action :set_post, only: [:show, :edit, :update]
 
+  def index
+    @posts = current_member.posts
+  end
+
   def new
     if current_member.posts.empty?  or current_member.posts.last.created_at < Time.now.to_date
       @post = Post.new
