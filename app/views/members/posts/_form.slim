@@ -3,5 +3,6 @@
     == label_tag "日期"
     == label_tag l post.created_at.present? ? post.created_at : Time.now.to_date, format: :long
   .field
-    == f.text_area :content, placeholder: "在這邊紀錄你的心情。"
+    == f.text_area :public_content, placeholder: "在這邊紀錄你的心情。"
+    == f.text_area :private_content, placeholder: "這裡是給自己看的~"
   == f.submit "送出", class: "ui blue submit button"

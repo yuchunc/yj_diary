@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title 易經日記
+    title == "【易經日記】#{yield :title}"
     = stylesheet_link_tag "homepage", media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -10,7 +10,7 @@ html
     .ui.page.grid
       .header.two.equal.height.column.row
         .column
-          h1 易經日記
+          h2 易經日記
         .column
           - if member_signed_in?
             == link_to sign_out_path do

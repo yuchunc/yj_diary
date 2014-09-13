@@ -1,10 +1,18 @@
+- content_for(:title) { " #{@yijing_result['gua_name']} #{l @post.created_at.to_date, format: :short}" }
+
 .one.column.row
   .column
+    h1
+      == l @post.created_at.to_date, format: :long
     .ui.blue.segment
-      h2
-        == l @post.created_at.to_date, format: :long
+      h3 公開內容
       p
-        == @post.content
+        == @post.public_content
+      - if @post.private_content.present?
+        hr
+        h3 私人內容
+        p
+          == @post.private_content
 
 .row
   .column
