@@ -1,24 +1,33 @@
+.one.column.row
+  .column
+    .ui.blue.segment
+      h2
+        == l @post.created_at.to_date, format: :long
+      p
+        == @post.content
+
 .row
-  .two.column.doubling.ui.grid
-    .column
-      .ui.blue.segment
-        h2
-          == l @post.created_at.to_date, format: :long
-        p
-          == @post.content
+  .column
+    .ui.piled.segment
+      .two.column.doubling.ui.grid
+        .column
+          h3 == "得卦 ─ #{@yijing_result['gua_name']}"
+          p == "卦詞： #{@yijing_result['gua_ci']}"
+          p == "彖曰： #{@yijing_result['tuan']}"
+          p == "象曰： #{@yijing_result['da_xiang']}"
 
-    .column
-      .ui.piled.segment
-        h3 == "得卦 ─ #{@yijing_result['gua_name']}"
-        p == "卦詞： #{@yijing_result['gua_ci']}"
-        p == "彖曰： #{@yijing_result['tuan']}"
-        p == "象曰： #{@yijing_result['da_xiang']}"
+          .ui.three.column.grid
+            .column
+              - @post.yaos.reverse_each do |yao|
+                .yao_row.text.center
+                  == yao
+            .column#gua
+              - @post.gua.reverse_each do |yao|
+                == display_yao(yao)
+        .column
+          - @yijing_result['yaos'].reverse_each do |yao_info|
+            p
+              == yao_info['yao_ci']
+              br
+              == yao_info['xiao_xiang']
 
-        .ui.three.column.grid
-          .column
-            - @post.yaos.reverse_each do |yao|
-              .yao_row.text.center
-                == yao
-          .column#gua
-            - @post.gua.reverse_each do |yao|
-              == display_yao(yao)

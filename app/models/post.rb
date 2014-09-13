@@ -44,6 +44,10 @@ class Post < ActiveRecord::Base
     yijing[self.gua.join ',']
   end
 
+  def self.yijing
+    YAML.load_file("crawler/yijing.yml")
+  end
+
   def yaos
     yaos = []
     self.gua.each_with_index do |yao, index|
