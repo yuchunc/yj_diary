@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
 
   GUA_ORDER = ['初', '二', "三", "四", '五', '上']
 
+  scope :latest, -> { order("created_at DESC") }
+
   aasm column: 'state' do
     state :published, :initial => true
     state :deleted

@@ -2,7 +2,7 @@ class Members::PostsController < Members::BaseController
   before_action :set_post, only: [:show, :edit, :update]
 
   def index
-    @posts = current_member.posts
+    @posts = current_member.posts.latest.limit(10).page params[:page]
   end
 
   def new
