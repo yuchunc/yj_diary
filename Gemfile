@@ -38,6 +38,10 @@ group :development do
   gem 'pry-doc'
 end
 
+group :development, :test do
+  gem 'factory_girl_rails'
+end
+
 
 
 # Use ActiveModel has_secure_password
