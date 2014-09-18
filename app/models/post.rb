@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
 
   belongs_to :member
 
+  paginates_per 10
+
   GUA_ORDER = ['初', '二', "三", "四", '五', '上']
 
   scope :latest, -> { order("created_at DESC") }

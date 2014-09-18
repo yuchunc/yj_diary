@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   root 'homepage#index'
 
   get "login_redirect", to: "members/base#login_redirect"
-  resources :posts, path: "p", to: "members/posts"
+  resources :posts, to: "members/posts" do
+    collection do
+      get "page/:page", action: :index
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
