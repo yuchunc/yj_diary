@@ -1,5 +1,7 @@
+- content_for(:title) { " #{l post.created_at.present? ? post.created_at : Time.now.to_date, format: :short}的日記" }
+
 == form_for post, html: { class: "ui small fluid form segment" } do |f|
-  .inline.field
+  h1.inline.field
     == label_tag "日期"
     == label_tag l post.created_at.present? ? post.created_at : Time.now.to_date, format: :long
   .field

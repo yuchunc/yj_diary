@@ -4,6 +4,7 @@
       == link_to post_path(post)
         == render "partials/gua", gua: post.gua
     .eleven.wide.column
+      .float.right== link_to "編輯", edit_post_path(post), class: "mini blue ui button"
       == link_to post_path(post)
         h3 == "#{l post.created_at.to_date, format: :long} 《#{post.yijing["gua_name"]}》"
       .ui.divider
