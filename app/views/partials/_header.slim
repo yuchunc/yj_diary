@@ -1,0 +1,15 @@
+.ui.page.grid
+  .column
+    .ui.menu
+      h2.header.item 【易經日記】
+      .right.menu
+        - if member_signed_in?
+          .item
+            == link_to new_post_path do
+              b 寫日記
+          .item
+            == link_to "舊日記", posts_path
+          .item
+            == link_to sign_out_path do
+              / #header_sign_out.ui.right.floated.button
+              |登出

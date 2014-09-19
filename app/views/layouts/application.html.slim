@@ -7,16 +7,8 @@ html
     = csrf_meta_tags
 
   body id="#{controller_name}_#{action_name}"
-    .ui.page.grid
-      .header.two.equal.height.column.row
-        .column
-          h2 【易經日記】
-        .column
-          - if member_signed_in?
-            == link_to sign_out_path do
-              #header_sign_out.ui.right.floated.button
-                |登出
+    == render "partials/header"
 
-      - if !flash.empty?
-          == render "partials/flash_message"
-      == yield
+    - if !flash.empty?
+        == render "partials/flash_message"
+    == yield

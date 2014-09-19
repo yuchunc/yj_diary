@@ -3,7 +3,7 @@ class Member
     require 'securerandom'
 
     def from_omniauth(auth)
-      where(auth.slice(:provider, :uid)).first_or_initialize.tap do |member|
+      where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |member|
         member.provider = auth.provider
         member.uid = auth.uid
         member.name = auth.info.name.blank? ? "" : auth.info.name
