@@ -10,5 +10,7 @@ html
     == render "partials/header"
 
     - if !flash.empty?
+      .ui.page.grid
         == render "partials/flash_message"
-    == yield
+    .ui.page.grid
+      == yield
