@@ -1,3 +1,5 @@
+- content_for(:title) { " 新增#{l Time.now.to_date, format: :short}的日記" }
+
 .one.column.row
   .column
     == render "form", post: @post

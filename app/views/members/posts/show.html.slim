@@ -3,8 +3,8 @@
 .one.column.row
   .column
     h1
-      == l @post.created_at.to_date, format: :long
-      == @yijing_result['gua_name']
+      = l @post.created_at.to_date, format: :long
+      = @yijing_result['gua_name']
     .ui.blue.segment
       h3 公開內容
       p

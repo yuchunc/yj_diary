@@ -1,10 +1,10 @@
-- content_for(:title) { " #{l post.created_at.present? ? post.created_at : Time.now.to_date, format: :short}的日記" }
-
-== form_for post, html: { class: "ui small fluid form segment" } do |f|
+.ui.segment
   h1.inline.field
-    == label_tag "日期"
-    == label_tag l post.created_at.present? ? post.created_at : Time.now.to_date, format: :long
-  .field
-    == f.text_area :public_content, placeholder: "在這邊紀錄你的心情。"
-    == f.text_area :private_content, placeholder: "這裡是給自己看的~"
-  == f.submit "送出", class: "ui blue submit button"
+    = "日期 "
+    =  l post.created_at.present? ? post.created_at.to_date : Date.current, format: :long
+
+  == form_for post, html: { class: "ui small fluid form" } do |f|
+    .field
+      == f.text_area :public_content, placeholder: "在這邊紀錄你的心情。"
+      == f.text_area :private_content, placeholder: "這裡是給自己看的~"
+    == f.submit "送出", class: "ui blue submit button"

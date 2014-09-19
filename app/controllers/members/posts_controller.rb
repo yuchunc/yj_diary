@@ -6,7 +6,7 @@ class Members::PostsController < Members::BaseController
   end
 
   def new
-    if current_member.posts.empty?  or current_member.posts.last.created_at < Time.now.to_date
+    if current_member.posts.empty?  or current_member.posts.last.created_at.to_date < Date.current
       @post = Post.new
     else
       flash[:notice] = "今天卜過了喔，沈澱一下，明天在卜看看 = )"
