@@ -1,0 +1,20 @@
+.two.doubling.column.ui.grid.segment
+  .column
+    h3 == "#{gua == :gua ? '得' : '變'}卦 ─ #{gua_details['gua_name']}"
+    p == "卦詞： #{gua_details['gua_ci']}"
+    p == "彖曰： #{gua_details['tuan']}"
+    p == "象曰： #{gua_details['da_xiang']}"
+
+    .ui.three.column.grid
+      .column
+        - @post.yaos(gua).reverse_each do |yao|
+          .yao_row.text.center
+            == yao
+      .column#gua
+        = render "partials/gua", gua: @post.gua
+  .column
+    - gua_details['yaos'].reverse_each do |yao_info|
+      p
+        == yao_info['yao_ci']
+        br
+        == yao_info['xiao_xiang']

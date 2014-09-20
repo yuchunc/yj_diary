@@ -1,10 +1,10 @@
-- content_for(:title) { " #{@yijing_result['gua_name']} #{l @post.created_at.to_date, format: :short}" }
+- content_for(:title) { " #{@post.gua_info['gua_name']} #{l @post.created_at.to_date, format: :short}" }
 
 .one.column.row
   .column
     h1
       = l @post.created_at.to_date, format: :long
-      = @yijing_result['gua_name']
+      = @post.gua_info['gua_name']
     .ui.blue.segment
       h3 公開內容
       p
@@ -17,24 +17,7 @@
 
 .row
   .column
-    .ui.piled.segment
-      .two.column.doubling.ui.grid
-        .column
-          h3 == "得卦 ─ #{@yijing_result['gua_name']}"
-          p == "卦詞： #{@yijing_result['gua_ci']}"
-          p == "彖曰： #{@yijing_result['tuan']}"
-          p == "象曰： #{@yijing_result['da_xiang']}"
-
-          .ui.three.column.grid
-            .column
-              - @post.yaos.reverse_each do |yao|
-                .yao_row.text.center
-                  == yao
-            .column#gua
-              = render "partials/gua", gua: @post.gua
-        .column
-          - @yijing_result['yaos'].reverse_each do |yao_info|
-            p
-              == yao_info['yao_ci']
-              br
-              == yao_info['xiao_xiang']
+    == render "partials/gua_details", gua_details: @post.gua_info, gua: :gua
+    - if @post.gua != @post.bian_gua
+      br
+      == render "partials/gua_details", gua_details: @post.bian_gua_info, gua: :bian_gua

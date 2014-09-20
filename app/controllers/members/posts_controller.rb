@@ -29,7 +29,6 @@ class Members::PostsController < Members::BaseController
   end
 
   def show
-    @yijing_result = @post.yijing
   end
 
   def edit

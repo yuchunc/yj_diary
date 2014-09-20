@@ -2,7 +2,7 @@ class Members::BaseController < ApplicationController
   before_action :authenticate_member!
 
   def login_redirect
-    if last_post.nil? or last_post.updated_at.to_date < Time.now.to_date
+    if last_post.nil? or last_post.updated_at.to_date < Date.current
       redirect_to new_post_path
     else
       redirect_to posts_path

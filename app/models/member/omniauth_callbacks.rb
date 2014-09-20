@@ -7,8 +7,8 @@ class Member
         member.provider = auth.provider
         member.uid = auth.uid
         member.name = auth.info.name.blank? ? "" : auth.info.name
-        member.username = auth.extra.raw_info.username.blank? ? "temp.#{Time.now.to_i}" : auth.extra.raw_info.username
-        member.email = auth.info.email.blank? ? "temp.#{Time.now.to_i}@yijing.tw" : auth.info.email
+        member.username = auth.extra.raw_info.username.blank? ? "temp.#{Time.current.to_i}" : auth.extra.raw_info.username
+        member.email = auth.info.email.blank? ? "temp.#{Time.current.to_i}@yijing.tw" : auth.info.email
         member.oauth_hash = auth.to_s
         member.oauth_access_token = auth.credentials.token
         member.password = SecureRandom.hex(4)
