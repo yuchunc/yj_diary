@@ -11,7 +11,7 @@
           .yao_row.text.center
             == yao
       .column#gua
-        = render "partials/gua", gua: @post.gua
+        = render "partials/gua", gua: @post.send(gua)
   .column
     - gua_details['yaos'].reverse_each do |yao_info|
       p
