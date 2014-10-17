@@ -30,6 +30,10 @@ gem 'sass-rails', '~> 4.0.3'
 gem "settingslogic"
 gem 'aasm'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development do
   gem 'spring'
   gem 'better_errors'
