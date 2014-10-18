@@ -1,13 +1,2 @@
-default: &default
-  facebook:
-    app_id: 1391723147714905
-    app_secret: "aaf7ab7cb0da47115649ecb43e55f5bf"
-
-development:
-  <<: *default
-
-test:
-  <<: *default
-
-production:
-  <<: *default
+facebook_id: "1391723147714905"
+facebook_secret: "4a4925cbbf95bfd4410f6bef884fed92"

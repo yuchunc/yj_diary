@@ -29,7 +29,8 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'sass-rails', '~> 4.0.3'
 
 # Backend Utilities
-gem "settingslogic"
+# gem "settingslogic"
+gem 'figaro'
 gem 'aasm'
 
 group :production do
