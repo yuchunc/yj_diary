@@ -1,8 +1,11 @@
 .row
   .two.column.doubling.ui.grid
     .column
-      |
-        每日一卦:
+      h2 隨機一卦:
+      .ui.three.column.grid
+        .column
+        .column
+          = render 'partials/gua', gua: Post.bu_gua.map{|x| x.to_i % 2}
 
     .center.aligned.column
       .ui.compact.segment

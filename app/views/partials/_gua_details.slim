@@ -19,3 +19,7 @@
         br
         | 象曰：
         == yao_info['xiao_xiang']
+  .column
+    p
+      | 看不懂嘛？參考一下別人怎麼說吧
+      == link_to "《易學網》#{gua_details["gua_name"]}", "http://www.eee-learning.com/book/neweee#{"%02d" % gua_details["gua_order"]}", target: "_blank"
