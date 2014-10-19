@@ -1,4 +1,10 @@
 .one.column.row
   .column
-    == render partial: "partials/post", collection: @posts
-    == paginate @posts
+    - if @posts.empty?
+      h2
+        |你還沒有日記喔，趕快來寫一篇吧！
+        == link_to new_post_path do
+          i 開始寫日記
+    - else
+      == render partial: "partials/post", collection: @posts
+      == paginate @posts
