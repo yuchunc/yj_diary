@@ -9,4 +9,4 @@
         h3 == "#{l post.created_at.to_date, format: :long} 《#{post.gua_info["gua_name"]}》"
       .ui.divider
       p
-        == truncate(post.public_content, length: 150){ link_to "更多", post_path(post) }
+        == truncate(sanitize post.public_content, length: 150){ link_to "更多", post_path(post) }
