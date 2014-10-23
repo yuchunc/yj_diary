@@ -57,9 +57,9 @@ class Post < ActiveRecord::Base
     YAML.load_file("crawler/yijing.yml")
   end
 
-  def yaos(gua)
+  def yaos_position(which_gua)
     yaos = []
-    self.send(gua).each_with_index do |yao, index|
+    self.send(which_gua).each_with_index do |yao, index|
       yao_name = yao > 0 ? "九" : "六"
       yao_text =  ( index == 0 or index == 5 ) ? "#{Post::GUA_ORDER[index]}#{yao_name}" : "#{yao_name}#{Post::GUA_ORDER[index]}"
       yaos << yao_text

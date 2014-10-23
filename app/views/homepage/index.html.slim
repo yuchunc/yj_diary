@@ -1,12 +1,13 @@
 .row
   .two.column.doubling.ui.grid
     .column
-      h2 隨機一卦:
+      h2
+        | 隨機一卦:
+        = " #{@dummy_post.gua_info['gua_name']}卦"
       .ui.three.column.grid
         .column
         .column
-          = render 'partials/gua', gua: Post.bu_gua.map{|x| x.to_i % 2}
-
+          = render 'partials/gua', gua: @dummy_post.gua
     .center.aligned.column
       .ui.compact.segment
         == link_to member_omniauth_authorize_path(:facebook) do

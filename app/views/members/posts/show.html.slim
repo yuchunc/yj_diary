@@ -17,9 +17,9 @@
 
 .row
   .column
-    == render "partials/gua_details", gua_details: @post.gua_info, gua: :gua
+    == render "partials/gua_details", gua_details: @post.gua_info, which_gua: :gua
     - if @post.gua != @post.bian_gua
       br
-      == render "partials/gua_details", gua_details: @post.bian_gua_info, gua: :bian_gua
+      == render "partials/gua_details", gua_details: @post.bian_gua_info, which_gua: :bian_gua
     - else
       h2 沒有變卦
