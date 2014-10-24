@@ -1,10 +1,22 @@
 - content_for(:title) { " #{@post.gua_info['gua_name']} #{l @post.created_at.to_date, format: :short}" }
+<div id="fb-root"></div>
+javascript:
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=833135203366422&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 
 .one.column.row
   .column
     h1
       = l @post.created_at.to_date, format: :long
-      = @post.gua_info['gua_name']
+      / = @post.gua_info['gua_name']
+    div class="fb-like" data-href=post_path(@post) data-layout="standard" data-action="like" data-show-faces="true" data-share="true"
+
+
     .ui.blue.segment
       h3 公開內容
       p
