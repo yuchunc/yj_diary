@@ -13,3 +13,6 @@
             == link_to sign_out_path do
               / #header_sign_out.ui.right.floated.button
               |登出
+        - else
+          .item
+            == link_to "FB登入", member_omniauth_authorize_path(:facebook)

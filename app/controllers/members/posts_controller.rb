@@ -1,5 +1,6 @@
 class Members::PostsController < Members::BaseController
   before_action :set_post, only: [:show, :edit, :update]
+  skip_before_action :authenticate_member!, only: :show
 
   def index
     @posts = current_member.posts.latest.page params[:page]
